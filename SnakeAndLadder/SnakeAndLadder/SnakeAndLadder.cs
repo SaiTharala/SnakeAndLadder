@@ -29,6 +29,8 @@ namespace SnakeAndLadder
                         break;
                     case LADDER:
                         this.playerPosition += dieRoll;
+                        if (playerPosition > WIN_POSITION)
+                            this.playerPosition -= dieRoll;
                         break;
                     case NO_PLAY:
                         break;
