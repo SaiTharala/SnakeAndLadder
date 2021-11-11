@@ -7,10 +7,11 @@ namespace SnakeAndLadder
     class SnakeAndLadder
     {
         public const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WIN_POSITION = 100, START = 0;
-        public int playerPosition = 0;
+        public int playerPosition = 0, count = 0;
         Random random = new Random();
         public int DieRoll()
         {
+            count++;
             int dice = random.Next(1, 7);
             return dice;
         }
@@ -35,8 +36,9 @@ namespace SnakeAndLadder
                     case NO_PLAY:
                         break;
                 }
+                Console.WriteLine("Current Player Position is :" + playerPosition + " after " + "Die roll of:" + dieRoll);
             }
-            Console.WriteLine("Current Player Position is :" + playerPosition);
+            Console.WriteLine("Current Player Position is :" + playerPosition + " and " + "No of Times Played is:" + count);
         }
     }
 }
